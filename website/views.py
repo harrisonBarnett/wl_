@@ -18,7 +18,19 @@ def home():
 @login_required
 def options():
     if request.method=="POST":
-        return redirect(url_for("views.home"))
+        if "update_totals" in request.form:
+            new_squat = request.form.get("squat")
+            new_clean = request.form.get("clean")
+            new_snatch = request.form.get("snatch")
+
+            user = User.query.get(current_user.id)
+
+            user.squat_max = new_squat
+            user.clean_max = new_clean
+            user.snatch_max = new_snatch
+            db.session.commit()
+
+            return redirect(url_for("views.home"))
 
     return render_template("options.html", user=current_user,
                             squat_max=current_user.squat_max,

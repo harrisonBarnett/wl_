@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} options {% endblock %}
+
+{% block body %}
+    <h1 align="center">options</h1>
+    <h2 align="center">squat: {{ squat_max }}</h2>
+    <h2 align="center">clean: {{ clean_max }}</h2>
+    <h2 align="center">snatch: {{ snatch_max }}</h2>
+
+    <br />
+    <div align="center">
+        <button  type="submit" class="btn btn-dark">clear training data</button>
+    </div>
+
+{% endblock %}

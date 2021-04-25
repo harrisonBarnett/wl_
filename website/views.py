@@ -23,12 +23,15 @@ def options():
             new_clean = request.form.get("clean")
             new_snatch = request.form.get("snatch")
 
-            user = User.query.get(current_user.id)
-
-            user.squat_max = new_squat
-            user.clean_max = new_clean
-            user.snatch_max = new_snatch
-            db.session.commit()
+            # make sure totals don't change if none value is supplied
+            if new_squat and new_clean and new_snatch:
+                user = User.query.get(current_user.id)
+                user.squat_max = new_squat
+                user.clean_max = new_clean
+                user.snatch_max = new_snatch
+                db.session.commit()
+            else:
+                pass
 
             return redirect(url_for("views.home"))
 

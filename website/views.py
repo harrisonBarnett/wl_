@@ -39,3 +39,23 @@ def options():
                             squat_max=current_user.squat_max,
                             clean_max=current_user.clean_max,
                             snatch_max=current_user.snatch_max)
+
+# clean up this hard code 
+SQUAT_MAX = 290
+warmup = {
+    "set_1": [5, .4],
+    "set_2": [5, .5],
+    "set_3": [5, .6]
+}
+wk_1 = {
+    "set_1": [5, .65],
+    "set_2": [5, .75],
+    "set_3": [5, .85]
+}
+
+@views.route("/squat", methods=["POST", "GET"])
+@login_required
+def squat():
+    if request.method=="POST":
+        pass
+    return render_template("squat.html", user=current_user, max=SQUAT_MAX, warmup=warmup, main=wk_1 )

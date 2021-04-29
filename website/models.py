@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):
     squat_max = db.Column(db.Integer, default=0)
     clean_max = db.Column(db.Integer, default=0)
     snatch_max = db.Column(db.Integer, default=0)
+    squat_id = db.Column(db.Integer, default=5)
     
 
 

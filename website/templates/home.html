@@ -3,18 +3,65 @@
 {% block title %}home{% endblock %}
 
 {% block body %}
-<h1 align="center">welcome back.</h1>
-
-<h2 align="center">select your workout.</h2>
-
+<!-- redirects to session page after button click confirmation -->
+<script>
+function beginSession(page) {
+    if(confirm('begin session?') == true) {
+        window.location.replace(page);            
+    }
+    else { 
+        return false;
+    }          
+}
+</script>
 <br />
-<div align="center">
-    <button type="submit" class="btn btn-dark">clean & jerk</button>
-    <button type="submit" class="btn btn-dark">snatch</button>
-    <button type="submit" class="btn btn-dark">snatch / clean & jerk</button>
-    <button type="submit" class="btn btn-dark">squat</button>
-</div>
+<div class="jumbotron">
+    <h1 align="center" class="display-2">welcome back.</h1>
+    <h2 align="center" class="display-4">select your workout.</h2>
 
+    <form method="POST">
+        <button 
+        id="/squat" 
+        type="button"
+        class="btn btn-dark btn-lg btn-block" 
+        onclick="beginSession(this.id)" 
+        name="squat"\
+        >
+        <h1 class="display-4">squat</h1>
+        </button>
+
+        <button 
+        id="/snatch" 
+        type="button"
+        class="btn btn-dark btn-lg btn-block" 
+        onclick="beginSession(this.id)" 
+        name="snatch"
+        >
+        <h1 class="display-4">snatch</h1>
+        </button>
+
+        <button 
+        id="/clean" 
+        type="button"
+        class="btn btn-dark btn-lg btn-block" 
+        onclick="beginSession(this.id)" 
+        name="clean"
+        >
+        <h1 class="display-4">clean</h1>
+        </button>
+
+        <button 
+        id="/clean_jerk" 
+        type="button"
+        class="btn btn-dark btn-lg btn-block" 
+        onclick="beginSession(this.id)" 
+        name="clean_jerk"
+        >
+        <h1 class="display-4">clean & jerk</h1>
+        </button>
+
+    </form>
+</div>
 
 
 {% endblock %}

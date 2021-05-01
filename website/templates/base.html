@@ -89,8 +89,9 @@
         {% block body %}
 
         {% endblock %}
+        
     </div>
-
+    
     <!-- js code for site interaction/movement, copy/paste -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -110,8 +111,8 @@
     <!-- url_for provides the filepath to the 'static' folder containing custom .js -->
     <script
       type="text/javascript"
-      src="{{ url_for('static', filename='index.js') }}"
+      src="{{url_for('static', filename='index.js')}}"
     ></script>
-
+    
 </body>
 </html>

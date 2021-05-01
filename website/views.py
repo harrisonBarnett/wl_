@@ -42,7 +42,8 @@ def options():
 
             return redirect(url_for("views.home"))
 
-    return render_template("options.html", user=current_user,
+    return render_template("options.html", 
+                            user=current_user,
                             squat_max=current_user.squat_max,
                             clean_max=current_user.clean_max,
                             snatch_max=current_user.snatch_max)
@@ -55,18 +56,41 @@ def squat():
     SQUAT_MAX = current_user.squat_max * .9
     squat_id = current_user.squat_id
     if squat_id % 4 == 1:
-        return render_template("squat.html", user=current_user, max=SQUAT_MAX, volume=routines.volume, warmup=routines.warmup, main=routines.wk_1)
+        return render_template("squat.html", 
+        user=current_user, 
+        max=SQUAT_MAX, 
+        volume=routines.volume, 
+        warmup=routines.warmup, 
+        main=routines.wk_1)
     elif squat_id % 4 == 2:
-        return render_template("squat.html", user=current_user, max=SQUAT_MAX, volume=routines.volume, warmup=routines.warmup, main=routines.wk_2)
+        return render_template("squat.html", 
+        user=current_user, 
+        max=SQUAT_MAX, 
+        volume=routines.volume, 
+        warmup=routines.warmup, 
+        main=routines.wk_2)
     elif squat_id % 4 == 3:
-        return render_template("squat.html", user=current_user, max=SQUAT_MAX, volume=routines.volume, warmup=routines.warmup, main=routines.wk_3)
+        return render_template("squat.html", 
+        user=current_user, 
+        max=SQUAT_MAX, 
+        volume=routines.volume, 
+        warmup=routines.warmup, 
+        main=routines.wk_3)
     elif squat_id % 4 == 0:
-        return render_template("squat.html", user=current_user, max=SQUAT_MAX, volume=routines.volume, warmup=routines.warmup, main=routines.wk_4)
+        return render_template("squat.html", 
+        user=current_user, max=SQUAT_MAX, 
+        volume=routines.volume, 
+        warmup=routines.warmup, 
+        main=routines.warmup)
 
 @views.route("/clean", methods=["POST", "GET"])
 @login_required
 def clean():
     CLEAN_MAX = current_user.clean_max 
-    return render_template("clean.html", user=current_user, max=CLEAN_MAX, 
-    three_position=routines.three_position, front_squat=routines.front_squat,
-    push_press=routines.push_press, snatch_press=routines.snatch_press)
+    return render_template("clean.html", 
+        user=current_user, 
+        max=CLEAN_MAX, 
+        three_position=routines.three_position, 
+        front_squat=routines.front_squat,
+        push_press=routines.push_press, 
+        snatch_press=routines.snatch_press)

@@ -4,18 +4,53 @@
 
 {% block body %}
 
-<h1 align="center"> let's go. </h1>
 <br />
+<div class="jumbotron">
+<h1 align="center"> let's go. </h1>
+    <h1>3-position clean</h1>
+    <table class="table table-dark table-striped">
+        <tr>
+            <td><h3>{{ three_position["set_1"][0] }} reps @ 
+                    {{ "%.2f"|format(three_position["set_1"][1] * max) }} lbs,
+                    {{ three_position["set_1"][2] }} set(s)</h3></td>
+        </tr>
+        <tr>
+            <td><h3>{{ three_position["set_2"][0] }} reps @ 
+                    {{ "%.2f"|format(three_position["set_2"][1] * max) }} lbs,
+                    {{ three_position["set_1"][2] }} set(s)</h3></td>
+        </tr>
+    </table>
 
-<!-- 3 position, front squat, OHP, snatch press -->
+    <h1>front squat</h1>
+    <table class="table table-dark table-striped">
+        <tr>
+            <td><h3>{{ front_squat["set_1"][0] }} reps @ 
+                    {{ "%.2f"|format(front_squat["set_1"][1] * max) }} lbs, 
+                    {{ front_squat["set_1"][2] }} set(s)</h3></td>
+        </tr>
+        <tr>
+            <td><h3>{{ front_squat["set_2"][0] }} reps @ 
+                    {{ "%.2f"|format(front_squat["set_2"][1] * max) }} lbs, 
+                    {{ front_squat["set_2"][2] }} set(s)</h3></td>
+        </tr>
+        <tr>
+            <td><h3>{{ front_squat["set_3"][0] }} reps @ 
+                    {{ "%.2f"|format(front_squat["set_3"][1] * max) }} lbs, 
+                    {{ front_squat["set_3"][2] }} set(s)</h3></td>
+        </tr>
 
-<h2 align="center">3-position-clean</h2>
-<h3 align="center">{{ three_position["set_1"][0] }} reps @ {{ three_position["set_1"][1] * max }} lbs</h3>
-<h3 align="center">{{ three_position["set_2"][0] }} reps @ {{ three_position["set_2"][1] * max }} lbs</h3>
-<h2 align="center">front squat</h2>
+    </table>
 
-<h2 align="center">overhead press</h2>
+    <h1>overhead press</h1>
+    <table class="table table-dark table-striped">
 
-<h2 align="center">snatch press</h2>
+    </table>
+    <h1>snatch press</h1>
+    <table class="table table-dark table-striped">
+        
+    </table>
+</div>
+
+<br />
     
 {% endblock %}

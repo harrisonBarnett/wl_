@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %} options {% endblock %}
+{% block title %} clean {% endblock %}
 
 {% block body %}
+
+<h1 align="center"> let's go. </h1>
+<br />
+
+<!-- 3 position, front squat, OHP, snatch press -->
+
+<h2 align="center">3-position-clean</h2>
+<h3 align="center">{{ three_position["set_1"][0] }} reps @ {{ three_position["set_1"][1] * max }} lbs</h3>
+<h3 align="center">{{ three_position["set_2"][0] }} reps @ {{ three_position["set_2"][1] * max }} lbs</h3>
+<h2 align="center">front squat</h2>
+
+<h2 align="center">overhead press</h2>
+
+<h2 align="center">snatch press</h2>
     
 {% endblock %}

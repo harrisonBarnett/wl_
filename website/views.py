@@ -52,7 +52,7 @@ def options():
 @views.route("/squat", methods=["POST", "GET"])
 @login_required
 def squat():
-    SQUAT_MAX = current_user.squat_max
+    SQUAT_MAX = current_user.squat_max * .9
     squat_id = current_user.squat_id
     if squat_id % 4 == 1:
         return render_template("squat.html", user=current_user, max=SQUAT_MAX, volume=routines.volume, warmup=routines.warmup, main=routines.wk_1)
@@ -66,7 +66,7 @@ def squat():
 @views.route("/clean", methods=["POST", "GET"])
 @login_required
 def clean():
-    CLEAN_MAX = current_user.clean_max
+    CLEAN_MAX = current_user.clean_max 
     return render_template("clean.html", user=current_user, max=CLEAN_MAX, 
     three_position=routines.three_position, front_squat=routines.front_squat,
     push_press=routines.push_press, snatch_press=routines.snatch_press)

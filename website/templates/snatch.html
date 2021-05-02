@@ -3,5 +3,55 @@
 {% block title %} options {% endblock %}
 
 {% block body %}
+
+<br />
+<div class="jumbotron">
+<h1 align="center"> let's go. </h1>
+    <h1>3-position snatch</h1>
+    <table class="table table-dark table-striped">     
+        {% for set in three_position %}
+            <tr>
+                <td>
+                    <h3>
+                        {{ set[0] }} reps @,
+                        {{ "%.2f"|format(set[1] * max) }} lbs,
+                        {{ set[2] }} set(s)
+                    </h3>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h1>snatch pull</h1>
+    <table class="table table-dark table-striped">     
+        {% for set in snatch_pull %}
+            <tr>
+                <td>
+                    <h3>
+                        {{ set[0] }} reps @,
+                        {{ "%.2f"|format(set[1] * max) }} lbs,
+                        {{ set[2] }} set(s)
+                    </h3>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h1>drop snatch</h1>
+    <table class="table table-dark table-striped">     
+        {% for set in drop_snatch %}
+            <tr>
+                <td>
+                    <h3>
+                        {{ set[0] }} reps @,
+                        {{ "%.2f"|format(set[1] * max) }} lbs,
+                        {{ set[2] }} set(s)
+                    </h3>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<br />
     
 {% endblock %}

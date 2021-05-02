@@ -30,56 +30,56 @@ volume = [
 
 # clean and snatch 3-position technique schemes
 
-three_position = {
-    "set_1": [2, .6, 1],
-    "set_2": [2, .65, 1]
-}
+three_position = [
+    [2, .6, 1],
+    [2, .65, 1]
+]
 
 ### clean day (following 3-position tech)
 # front squat is based on a percentage of max clean
-front_squat = {
-    "set_1": [2, .6, 6], # 6 sets
-    "set_2": [5, .65, 1],
-    "set_3": [3, .7, 1]
-}
+front_squat = [
+    [2, .6, 6], # 6 sets
+    [5, .65, 1],
+    [3, .7, 1]
+]
 # push press is based on a percentage of max clean
-push_press = {
-    "set_1": [4, .7], # 5 sets
-}
+push_press = [
+    [4, .7, 5], # 5 sets
+]
 
-snatch_press = {
-    "set_1": [2, .65], # 5 sets
-    "set_1": [2, .7] # 5 sets
-}
+snatch_press = [
+    [2, .65, 5], # 5 sets
+    [2, .7, 5] # 5 sets
+]
 
 ### snatch day (following 3-position tech)
 
-snatch_pull = {
-    "set_1": [4, .85] # 5 sets
-}
+snatch_pull = [
+    [4, .85, 5] # 5 sets
+]
 
-drop_snatch = {
-    "set_1": [2, .5] # 5 sets
-}
+drop_snatch = [
+    [2, .5, 5] # 5 sets
+]
 
 ### main lifts day
 
-snatch = {
-    "set_1": [3, .55],
-    "set_2": [3, .6],
-    "set_3": [3, .65],
-    "set_4": [2, .7],
-    "set_5": [1, .75],
-}
+snatch = [
+    [3, .55, 1],
+    [3, .6, 1],
+    [3, .65, 1],
+    [2, .7, 1],
+    [1, .75, 1]
+]
 
-clean_jerk = {
-    "set_1": [3, .55],
-    "set_2": [3, .6],
-    "set_3": [3, .65],
-    "set_4": [2, .7],
-    "set_5": [1, .75],
-}
+clean_jerk = [
+    [3, .55, 1],
+    [3, .6, 1],
+    [3, .65, 1],
+    [2, .7, 1],
+    [1, .75, 1]
+]
 
-SLDL = {
-    "set_1": [8, .3] # percentage based on clean max
-}
+SLDL = [
+    [8, .55, 3] # percentage based on squat max
+]

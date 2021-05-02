@@ -4,4 +4,55 @@
 
 {% block body %}
     
+<br />
+<div class="jumbotron">
+<h1 align="center"> let's go. </h1>
+    <h1>snatch</h1>
+    <table class="table table-dark table-striped">     
+        {% for set in snatch %}
+            <tr>
+                <td>
+                    <h3>
+                        {{ set[0] }} reps @,
+                        {{ "%.2f"|format(set[1] * snatch_max) }} lbs,
+                        {{ set[2] }} set(s)
+                    </h3>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h1>clean & jerk</h1>
+    <table class="table table-dark table-striped">     
+        {% for set in clean_jerk %}
+            <tr>
+                <td>
+                    <h3>
+                        {{ set[0] }} reps @,
+                        {{ "%.2f"|format(set[1] * clean_max) }} lbs,
+                        {{ set[2] }} set(s)
+                    </h3>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h1>stiff-legged deadlift</h1>
+    <table class="table table-dark table-striped">     
+        {% for set in SLDL %}
+            <tr>
+                <td>
+                    <h3>
+                        {{ set[0] }} reps @,
+                        {{ "%.2f"|format(set[1] * squat_max) }} lbs,
+                        {{ set[2] }} set(s)
+                    </h3>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+<br />
+
 {% endblock %}

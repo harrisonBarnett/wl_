@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
+    <link 
+    rel= "stylesheet" 
+    type= "text/css" 
+    href= "{{ url_for('static',filename='styles.css') }}"
+    />
+    
     <!-- bootstrap stylesheets for making the site pretty, literally just copy/paste-->
     <link
       rel="stylesheet"
@@ -19,11 +25,7 @@
       crossorigin="anonymous"
     />
 
-    <link 
-    rel= "stylesheet" 
-    type= "text/css" 
-    href= "{{ url_for('static',filename='styles.css') }}"
-    />
+    
 
 
     <!-- can be overridden in templates that inherit this template -->

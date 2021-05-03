@@ -1,0 +1,40 @@
+
+body {
+    background-image: url("/static/images/snatch_bg.jpg");
+    background-color: black;
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#wl_logo {
+    position: relative;
+    top: 0;
+    left: 5%;
+}
+
+#wl_logo p {
+    font-size: 68px;
+    flex: auto;
+    font-family:Impact;
+    color: rgb(255, 255, 87);
+    text-decoration: none;
+}
+
+#signin {
+    position: relative;
+    left: 5%;
+
+}
+
+#signin a {
+    font-size: 68px;
+    cursor: pointer;
+    flex: auto;
+    font-family:Impact;
+    color: white;
+    text-decoration: none;
+
+}

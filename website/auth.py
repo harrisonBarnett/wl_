@@ -75,3 +75,18 @@ def logout():
     # removes the current user from the session
     logout_user()
     return redirect(url_for('auth.login'))
+
+
+
+
+
+### NEW VIEWS FOR NEW UI LAYOUT ###
+### IS BETTER -- MUUUCH BETTER ###
+
+@auth.route("/sign-in")
+def sign_in():
+    return render_template("sign-in.html")
+
+@auth.route("/set-up")
+def set_up():
+    return render_template("set-up.html")

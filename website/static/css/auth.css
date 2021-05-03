@@ -1,0 +1,55 @@
+
+body {
+    background-image: url("/static/images/auth_bg.jpg");
+    background-color: black;
+    height: 1024px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+input {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: grey; 
+
+}
+
+::placeholder {
+    color: white;
+
+}
+
+.login-form {
+    position: relative;
+    top: 150px;
+    width: 300px; /* set width of a block element */ 
+    margin: 0 auto;  /* accounts for element size to center dynamically */   
+}
+
+.submit-button {
+    position: relative;
+    width: 100px;
+    padding: 12px 20px;
+    margin: 8px 100px;
+    box-sizing: border-box;
+    background-color: grey; 
+    border: 2px solid white;
+    color: white;
+}
+
+p {
+    color: white;
+    text-decoration: none;
+    font-family: Helvetica; 
+}
+
+p a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}

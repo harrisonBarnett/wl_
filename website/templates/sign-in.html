@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+
+
+    <!-- custom -->
+    <link 
+    rel= "stylesheet" 
+    type= "text/css" 
+    href= "{{ url_for('static',filename='css/auth.css') }}"
+    />
+
+</head>
+<body>
+    <container class="login-container">
+        <form class="login-form" method="POST">
+            <div class="form-group">
+                <input 
+                autofocus
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="email"
+                />
+            </div>
+            <div class="form-group">
+                <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="password"
+                />
+            </div>
+            <button type="submit" class="submit-button">sign in</button>
+
+            <p>don't have an account? <a href="/set-up">sign up</a></p>
+        </form> 
+    </container>
+
+</body>
+</html>

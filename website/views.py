@@ -45,6 +45,16 @@ def options():
             db.session.commit()
 
             return redirect(url_for("views.home"))
+        
+        if "clear_data" in request.form:
+            user = User.query.get(current_user.id)
+            user.squat_max = 0
+            user.clean_max = 0
+            user.snatch_max = 0
+
+            db.session.commit()
+
+            return redirect(url_for("views.home"))
 
     return render_template("options.html", 
                             user=current_user,
@@ -86,6 +96,17 @@ def squat():
         volume=routines.volume, 
         warmup=routines.warmup, 
         main=routines.warmup)
+
+    if request.method == "POST":
+        # if make-lift in request.form
+        # increase lifts by appropriate percentages
+        # squat_id increases by 1
+        
+        # if miss-lift in request.form
+        # squat_id remains unchanged
+        user = User.query.get(current_user.id)
+        user.squat_id += 1
+        db.session.commit()
 
 @views.route("/clean", methods=["POST", "GET"])
 @login_required

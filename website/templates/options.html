@@ -3,6 +3,16 @@
 {% block title %} options {% endblock %}
 
 {% block body %}
+<script>
+function clearData() {
+    if(confirm('clear data?') == true) {
+        window.location.replace(url_for("views.home"));
+    }
+    else {
+        return false;
+    }
+}
+</script>
 
 
 <container class="totals-container" align="center">
@@ -14,7 +24,7 @@
             type="number" 
             id="squat" 
             name="squat" 
-            placeholder="current: {{squat_max}}"
+            placeholder="current squat: {{squat_max}}"
             />
         </div>
         <div class="form-group">
@@ -22,7 +32,7 @@
             type="number" 
             id="snatch" 
             name="snatch" 
-            placeholder="current: {{snatch_max}}"
+            placeholder="current snatch: {{snatch_max}}"
             />
         </div>
         <div class="form-group">
@@ -30,7 +40,7 @@
             type="number" 
             id="clean" 
             name="clean" 
-            placeholder="current: {{clean_max}}"
+            placeholder="current clean: {{clean_max}}"
             />
         </div>
         <button 
@@ -50,7 +60,8 @@
                 id="option-button"
                 name="clear_data" 
                 type="submit" 
-                class="clear-button">
+                class="clear-button"
+                onclick="clearData()" >
                 clear training data
         </div>
         <div class="form-group">

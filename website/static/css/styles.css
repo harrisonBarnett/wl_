@@ -73,3 +73,77 @@ nav ul li a:hover{
     font-family: Arial;
 }
 
+h1 {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+.total-form {
+    font-family: Arial;
+    text-decoration: none;
+}
+
+
+input {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(250, 208, 22);
+    background-color: rgb(80, 80, 80); 
+    color: rgb(255, 255, 255);
+    opacity: .8;
+    font-family: Arial;
+}
+
+input::placeholder {
+    color: white;
+}
+
+.submit-button {
+    position: relative;
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: grey; 
+    border: 2px solid rgb(250, 208, 22);
+    color: white;
+    font-family: Arial;
+    opacity: .8;
+}
+
+.total-form {
+    position: relative;
+    top: 50px;
+    width: 300px; /* set width of a block element */ 
+    margin: 0 auto;  /* accounts for element size to center dynamically */   
+}
+
+.totals-container {
+    width: 300px;
+    left: 10px;
+}
+
+#option-button {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 75px;
+    box-sizing: border-box;
+    background-color: grey;
+    border: 2px solid white;
+    color: white;
+    font-family: Arial;
+    opacity: .8;
+    border: 2px solid rgb(250, 208, 22);
+}
+
+.options-container {
+    position: relative;
+    top: 60px;
+    font-family: Arial;
+}
+

@@ -41,15 +41,10 @@
     <!-- scratch navbar -->
     <nav class="main-navbar">
         <ul>
-            {% if user.is_authenticated %}
             <li><a id="home" href="/home">home</a></li>
             <li><a id="progress" href="/options">progress</a></li>
             <li><a id="options" href="/options">options</a></li>
             <li><a id="logout" href="/logout">log out</a></li>
-            {% else %}
-            <li><a id="login" href="/sign-in">Log In</a></li>
-            <li><a id="signUp" href="/set-up">Sign Up</a></li>
-            {% endif %}
         </ul>
     </nav>
 

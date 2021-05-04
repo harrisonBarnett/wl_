@@ -7,8 +7,15 @@ from flask_login import login_user, login_required, logout_user, current_user
 # blueprints allow us to use views accross the application
 auth = Blueprint('auth', __name__)
 
-@auth.route("/login", methods=["POST", "GET"])
-def login():
+@auth.route("/logout")
+@login_required # makes it to where a view is only available to a logged-in user
+def logout():
+    # removes the current user from the session
+    logout_user()
+    return redirect(url_for('auth.sign_in'))
+
+@auth.route("/sign-in", methods=["POST", "GET"])
+def sign_in():
     if request.method=="POST":
         email = request.form.get('email')
         password = request.form.get('password')
@@ -18,41 +25,40 @@ def login():
         if user:
             # compare the db user password with password pass into login form
             if check_password_hash(user.password, password):
-                flash('Logged in successfully!', category='success')
                 # logs the user into the current session
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
             else:
-                flash('Incorrect password. Try again.', category='error')
+                flash('incorrect password. try again.', category='error')
         else:
-            flash('Email does not exist.', category='error')
+            flash('email does not exist.', category='error')
 
-    return render_template("login.html", user=current_user)
+    return render_template("sign-in.html", user=current_user)
 
-@auth.route("/sign-up", methods=["POST", "GET"])
-def signup():
+@auth.route("/set-up", methods=["POST", "GET"])
+def set_up():
     if request.method=="POST":
         # get data from forms by name
         email = request.form.get('email')
-        firstName = request.form.get('firstName')
+        firstName = request.form.get('name')
         password = request.form.get('password')
         confirmation = request.form.get('confirmation')
         
         # check to see if email is in use
         user = User.query.filter_by(email=email).first()
         if user:
-            flash('This account already exists.', category='error')
-            return redirect("/login")
+            flash('this account already exists.', category='error')
+            return redirect("/set-up")
 
         # checking for valid info
         if len(email) < 4:
-            flash('Email must be at least 3 characters.', category='error')
+            flash('email must be at least 3 characters.', category='error')
         elif len(firstName) < 2:
-            flash('First name must be at least 2 characters', category='error')
+            flash('first name must be at least 2 characters', category='error')
         elif password != confirmation:
-            flash('Passwords do not match.', category='error')
+            flash('passwords do not match.', category='error')
         elif len(password) < 7:
-            flash('Password must be at least 7 characters.', category='error')
+            flash('password must be at least 7 characters.', category='error')
         else:
             # add user to the database
             new_user = User(
@@ -63,30 +69,7 @@ def signup():
             db.session.commit()
             login_user(new_user, remember=True)
 
-            flash('Account created!', category='success')
+            flash('account created!', category='dark')
             return redirect(url_for('views.home'))
     
-    return render_template("sign_up.html", user=current_user)
-
-# makes certain views only available when a user is logged in
-@auth.route("/logout")
-@login_required
-def logout():
-    # removes the current user from the session
-    logout_user()
-    return redirect(url_for('auth.login'))
-
-
-
-
-
-### NEW VIEWS FOR NEW UI LAYOUT ###
-### IS BETTER -- MUUUCH BETTER ###
-
-@auth.route("/sign-in")
-def sign_in():
-    return render_template("sign-in.html")
-
-@auth.route("/set-up")
-def set_up():
-    return render_template("set-up.html")
+    return render_template("set-up.html", user=current_user)

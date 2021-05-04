@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>set up</title>
+{% extends "auth-base.html" %}
 
-    <!-- custom -->
-    <link 
-    rel= "stylesheet" 
-    type= "text/css" 
-    href= "{{ url_for('static',filename='css/auth.css') }}"
-    />
+{% block title %}sign up{% endblock %}
 
-</head>
-<body>
+{% block body %}
     <container class="login-container">
         <form class="login-form" method="POST">
             <div class="form-group">
@@ -51,8 +39,8 @@
                 />
             </div>
             <button type="submit" class="submit-button">submit</button>
+            <p>already have an account? <a href="/sign-in">sign in</a></p>
         </form> 
     </container>
+{% endblock %}
 
-</body>
-</html>

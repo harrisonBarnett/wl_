@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- custom css -->
     <link 
     rel= "stylesheet" 
     type= "text/css" 
-    href= "{{ url_for('static',filename='styles.css') }}"
+    href= "{{ url_for('static',filename='css/styles.css') }}"
     />
     
     <!-- bootstrap stylesheets for making the site pretty, literally just copy/paste-->
@@ -25,81 +26,33 @@
       crossorigin="anonymous"
     />
 
-    
-
-
     <!-- can be overridden in templates that inherit this template -->
     <title>{% block title %} base template {% endblock %}</title>
 </head>
 <body>
+    <!-- boostrap overrides -->
+    <style type="text/css">
+        body { background: black !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+     </style>
+     <style type="text/css">
+        button { background: rgb(28, 28, 28) !important; }
+     </style>
+
     <!-- scratch navbar -->
     <nav class="main-navbar">
         <ul>
             {% if user.is_authenticated %}
             <li><a id="home" href="/home">home</a></li>
-            <li><a id="logout" href="/logout">Log Out</a></li>
-            <li><a id="options" href="/options">Options</a></li>
+            <li><a id="progress" href="/options">progress</a></li>
+            <li><a id="options" href="/options">options</a></li>
+            <li><a id="logout" href="/logout">log out</a></li>
             {% else %}
-            <li><a id="login" href="/login">Log In</a></li>
-            <li><a id="signUp" href="/sign-up">Sign Up</a></li>
+            <li><a id="login" href="/sign-in">Log In</a></li>
+            <li><a id="signUp" href="/set-up">Sign Up</a></li>
             {% endif %}
         </ul>
     </nav>
-    
-    <!-- navigation bar lives at the top of every page -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <!-- button that shows/hides navbar if the screen is too small to fit all buttons -->
-        <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-toggle="collapse" 
-        data-target="#navbar"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- these are the options that live in the navbar -->
-        <div class="collapse navbar-collapse" id="navbar">
-            <div class="navbar-nav">
-                <!-- check if user is logged in to display certain options -->
-                {% if user.is_authenticated %}
-                <!-- nav-items are buttons with routes -->
-                <a class="nav-item nav-link" id="home" href="/home">Home</a>
-                <a class="nav-item nav-link" id="logout" href="/logout">Log Out</a>
-                <a class="nav-item nav-link" id="options" href="/options">Options</a>
-                {% else %}
-                <a class="nav-item nav-link" id="login" href="/login">Log In</a>
-                <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
-                {% endif %}
-            </div>
-        </div>  
-    </nav>
-    <!-- gets flashed messages from the server for display (i.e. error, success w/forms) -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        <!-- check if message was flashed -->
-        {% if messages %}
-            <!-- loop through category per message (i.e. 'error', 'success') -->
-            {% for category, message in messages %}
-                {% if category == 'error' %}
-                <!-- these are the alerts that will appear if a message is flashed 'error' -->
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="close" data-dismiss="alert">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                {% else %}
-                <!-- these are the alerts that will appear if a message is flashed 'success' -->
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="close" data-dismiss="alert">
-                        <!-- this is the button that you click to dismiss the alert -->
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+
     <div class="container">
         {% block body %}
 

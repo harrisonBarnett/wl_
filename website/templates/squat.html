@@ -1,24 +1,17 @@
-{% extends "base.html" %}
+{% extends "session-base.html" %}
 
 {% block title %} squat {% endblock %}
 
 {% block body %}
 
-<div class="alert alert-secondary alert-dismissible fade show" role="alert">
-    <h1 class="display-1 font-weight-bold" align="center">lets fucking go.</h1>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
 
-<br />
-<div class="jumbotron bg-secondary text-white">
-    <h1 class="display-4 font-weight-bold">warmup</h1>
+
+    <h1>warmup</h1>
     <table class="table table-dark table-striped">     
         {% for set in warmup %}
             <tr>
                 <td>
-                    <h3 class="display-4">
+                    <h3>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * max) }} lbs
                     </h3>
@@ -27,12 +20,12 @@
         {% endfor %}
     </table>
 
-    <h1 class="display-4 font-weight-bold">main sets</h1>
+    <h1>main sets</h1>
     <table class="table table-dark table-striped">     
         {% for set in main %}
             <tr>
                 <td>
-                    <h3 class="display-4">
+                    <h3>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * max) }} lbs
                     </h3>
@@ -41,35 +34,16 @@
         {% endfor %}
     </table>
 
-    <h1 class="display-4 font-weight-bold">volume</h1>
+    <h1>volume</h1>
     <table class="table table-dark table-striped">
         {% for n in range(4) %}
         <tr>
-            <td><h3 class="display-4">{{ volume[0][0] }} reps @ 
+            <td><h3>{{ volume[0][0] }} reps @ 
                 {{ "%.2f"|format(max * volume[0][1]) }} lbs</h3></td>
         </tr>
         {% endfor %}
         
     </table>
-    <br />
-    <div class="btn-group btn-lg btn-block" role="group" aria-label="make/miss" align="center">
-        <button 
-        type="button" 
-        class="btn btn-dark"
-        id="make"
-        >
-        <h3 class="display-4">make</h3>
-        </button>
-        <button 
-        type="button" 
-        class="btn btn-dark"
-        id="miss"
-        >
-        <h3 class="display-4">miss</h3>
-        </button>
-    </div>
-</div>
-
 
 
 {% endblock %}

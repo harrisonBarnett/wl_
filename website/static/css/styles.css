@@ -1,0 +1,75 @@
+/* navbar stuff */
+nav {
+    font-size: 2rem;
+    background-color: rgb(28, 28, 28);
+    
+}
+ /* flex container */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    cursor: pointer;
+    flex: auto;
+    text-align: center;
+    font-family:Impact;
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgb(250, 208, 22);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: Impact;
+}
+
+nav ul li:hover {
+    background-color: rgb(50, 50, 50)
+}
+
+nav ul li a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+/* make the navbar responsive depending on portal width */
+@media all and (max-width: 600px) {
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+}
+
+/* button styling */
+
+.button-group {
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-family: Arial;
+    text-decoration: none;
+    
+}
+
+.button-group button {
+    border: 2px solid rgb(250, 208, 22);
+}
+
+.title {
+    font-size: 52px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+}
+

@@ -15,11 +15,10 @@ function beginSession(page) {
 }
 </script>
 <br />
-<div class="jumbotron bg-secondary text-white">
-    <h1 align="center" class="display-2">welcome back.</h1>
-    <h2 align="center" class="display-4">select your workout.</h2>
 
-    <form method="POST">
+    <h2 align="center" class="title">select your workout.</h2>
+
+    <form class="button-group" method="POST">
         <button 
         id="/squat" 
         type="button"
@@ -27,7 +26,7 @@ function beginSession(page) {
         onclick="beginSession(this.id)" 
         name="squat"\
         >
-        <h1 class="display-4">squat</h1>
+        <h1>squat</h1>
         </button>
 
         <button 
@@ -37,7 +36,7 @@ function beginSession(page) {
         onclick="beginSession(this.id)" 
         name="snatch"
         >
-        <h1 class="display-4">snatch</h1>
+        <h1>snatch</h1>
         </button>
 
         <button 
@@ -47,7 +46,7 @@ function beginSession(page) {
         onclick="beginSession(this.id)" 
         name="clean"
         >
-        <h1 class="display-4">clean</h1>
+        <h1>clean</h1>
         </button>
 
         <button 
@@ -57,11 +56,11 @@ function beginSession(page) {
         onclick="beginSession(this.id)" 
         name="clean_jerk"
         >
-        <h1 class="display-4">snatch / clean & jerk</h1>
+        <h1>snatch / clean & jerk</h1>
         </button>
 
     </form>
-</div>
+
 
 
 {% endblock %}

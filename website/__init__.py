@@ -33,7 +33,7 @@ def make_app():
 
     # setup for login manager
     login_manager = LoginManager()
-    login_manager.login_view = "auth.login"
+    login_manager.login_view = "auth.sign_in"
     login_manager.init_app(app)
     # load in the user to the webapp
     @login_manager.user_loader

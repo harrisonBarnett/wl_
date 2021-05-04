@@ -53,26 +53,28 @@ function clearData() {
 </container>
 
 <container class="options-container" align="center">
-    <h1 class="page-title">other options</h1>
-    <form method="POST">
-        <div class="form-group">
-            <button 
-                id="option-button"
-                name="clear_data" 
-                type="submit" 
-                class="clear-button"
-                onclick="clearData()" >
-                clear training data
-        </div>
-        <div class="form-group">
-            <button 
-                id="option-button"
-                name="update_login" 
-                type="submit" 
-                class="update-login">
-                update login info
-        </div>
-    </form>
+    <container class="options-buttons">
+        <h1 class="page-title">other options</h1>
+        <form method="POST">
+            <div class="form-group">
+                <button 
+                    id="option-button"
+                    name="clear_data" 
+                    type="submit" 
+                    class="clear-button"
+                    onclick="clearData()" >
+                    clear training data
+            </div>
+            <div class="form-group">
+                <button 
+                    id="option-button"
+                    name="update_login" 
+                    type="submit" 
+                    class="update-login">
+                    update login info
+            </div>
+        </form>
+    </container>
 </container>
 
 {% endblock %}

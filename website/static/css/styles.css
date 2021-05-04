@@ -129,21 +129,28 @@ input::placeholder {
 }
 
 #option-button {
+    position: relative;
     width: 300px;
     padding: 12px 20px;
-    margin: 8px 75px;
+    margin: 8px 20px;
     box-sizing: border-box;
     background-color: grey;
-    border: 2px solid white;
+    border: 2px solid rgb(250, 208, 22);
     color: white;
     font-family: Arial;
     opacity: .8;
-    border: 2px solid rgb(250, 208, 22);
 }
 
 .options-container {
+    width: 300px;
+    left: 10px;
+
+}
+
+.options-buttons {
     position: relative;
-    top: 60px;
-    font-family: Arial;
+    top: 50px;
+    width: 300px; /* set width of a block element */ 
+    margin: 0 auto;  /* accounts for element size to center dynamically */  
 }
 

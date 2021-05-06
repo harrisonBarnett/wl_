@@ -24,7 +24,7 @@ function clearData() {
             type="number" 
             id="squat" 
             name="squat" 
-            placeholder="current squat: {{squat_max}}"
+            placeholder="current squat: {{'%.2f'|format(squat_max)}}"
             />
         </div>
         <div class="form-group">
@@ -32,7 +32,7 @@ function clearData() {
             type="number" 
             id="snatch" 
             name="snatch" 
-            placeholder="current snatch: {{snatch_max}}"
+            placeholder="current snatch: {{ '%.2f'|format(snatch_max)}}"
             />
         </div>
         <div class="form-group">
@@ -40,7 +40,7 @@ function clearData() {
             type="number" 
             id="clean" 
             name="clean" 
-            placeholder="current clean: {{clean_max}}"
+            placeholder="current clean: {{'%.2f'|format(clean_max)}}"
             />
         </div>
         <button 

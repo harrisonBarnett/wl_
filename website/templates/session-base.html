@@ -49,6 +49,18 @@
                 return false;
             }          
         }
+
+
+        function updateMax() {
+            if(confirm('finished up?') == true) {
+                window.location.replace(url_for("views.home"));
+            }
+            else {
+                return false;
+            }
+        }
+
+
     </script>
 
 
@@ -61,11 +73,33 @@
         
         <nav class="miss-make-footer">
             <ul>
-                <li name="make-lift" method="POST">make</li>
-                <li>miss</li>
+                <li>
+                    <form method="POST">
+                            <span>
+                                <input 
+                                onclick="return confirm('submit session?')"
+                                type="submit"
+                                value="make"
+                                name="make_lift">
+                            </span>
+                    </form>
+                </li>
+                <li>
+                    <form method="POST">
+                            <span>
+                                <input 
+                                onclick="return confirm('submit session?')"
+                                type="submit"
+                                value="miss"
+                                name="miss_lift">
+                            </span>
+                    </form>
+                </li>
                 <li onclick="go_home()">bail</li>
             </ul>
         </nav>
+
+        
 
         <script
         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

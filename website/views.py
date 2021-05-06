@@ -56,6 +56,7 @@ def options():
 
             return redirect(url_for("views.home"))
 
+
     return render_template("options.html", 
                             user=current_user,
                             squat_max=current_user.squat_max,
@@ -67,46 +68,51 @@ def options():
 @views.route("/squat", methods=["POST", "GET"])
 @login_required
 def squat():
-    SQUAT_MAX = current_user.squat_max * .9
-    squat_id = current_user.squat_id
-    if squat_id % 4 == 1:
-        return render_template("squat.html", 
-        user=current_user, 
-        max=SQUAT_MAX, 
-        volume=routines.volume, 
-        warmup=routines.warmup, 
-        main=routines.wk_1)
-    elif squat_id % 4 == 2:
-        return render_template("squat.html", 
-        user=current_user, 
-        max=SQUAT_MAX, 
-        volume=routines.volume, 
-        warmup=routines.warmup, 
-        main=routines.wk_2)
-    elif squat_id % 4 == 3:
-        return render_template("squat.html", 
-        user=current_user, 
-        max=SQUAT_MAX, 
-        volume=routines.volume, 
-        warmup=routines.warmup, 
-        main=routines.wk_3)
-    elif squat_id % 4 == 0:
-        return render_template("squat.html", 
-        user=current_user, max=SQUAT_MAX, 
-        volume=routines.volume, 
-        warmup=routines.warmup, 
-        main=routines.warmup)
+    if request.method=="GET":
+        SQUAT_MAX = current_user.squat_max * .9
+        squat_id = current_user.squat_id
+        if squat_id % 4 == 1:
+            return render_template("squat.html", 
+            user=current_user, 
+            max=SQUAT_MAX, 
+            volume=routines.volume, 
+            warmup=routines.warmup, 
+            main=routines.wk_1)
+        elif squat_id % 4 == 2:
+            return render_template("squat.html", 
+            user=current_user, 
+            max=SQUAT_MAX, 
+            volume=routines.volume, 
+            warmup=routines.warmup, 
+            main=routines.wk_2)
+        elif squat_id % 4 == 3:
+            return render_template("squat.html", 
+            user=current_user, 
+            max=SQUAT_MAX, 
+            volume=routines.volume, 
+            warmup=routines.warmup, 
+            main=routines.wk_3)
+        elif squat_id % 4 == 0:
+            return render_template("squat.html", 
+            user=current_user, max=SQUAT_MAX, 
+            volume=routines.volume, 
+            warmup=routines.warmup, 
+            main=routines.warmup)
 
     if request.method == "POST":
-        # if make-lift in request.form
-        # increase lifts by appropriate percentages
-        # squat_id increases by 1
-        
-        # if miss-lift in request.form
-        # squat_id remains unchanged
-        user = User.query.get(current_user.id)
-        user.squat_id += 1
-        db.session.commit()
+        if "make_lift" in request.form:
+            squat_id = current_user.squat_id
+            if squat_id % 4 == 3:
+                current_user.squat_max = current_user.squat_max + (current_user.squat_max * .02)
+                current_user.squat_id = current_user.squat_id + 1
+                db.session.commit()
+                return redirect(url_for("views.home"))
+            else:
+                current_user.squat_id = current_user.squat_id + 1
+                db.session.commit()
+                return redirect(url_for("views.home"))
+        elif "miss_lift" in request.form:
+            return redirect(url_for("views.home"))
 
 @views.route("/clean", methods=["POST", "GET"])
 @login_required

@@ -23,6 +23,11 @@
 
 </head>
 <body>
+    <!-- bootstrap override -->
+    <style type="text/css">
+        html { background: rgb(0, 0, 0) !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+     </style>
+
     <!-- flash message logic -->
     <!-- gets flashed messages from the server for display (i.e. error, success w/forms) -->
     {% with messages = get_flashed_messages(with_categories=true) %}

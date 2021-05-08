@@ -4,15 +4,12 @@
 
 {% block body %}
     
-<br />
-<div class="jumbotron bg-secondary text-white">
-<h1 align="center" class="display-1"> let's go. </h1>
-    <h1 class="display-4 font-weight-bold">snatch</h1>
+    <h1>snatch</h1>
     <table class="table table-dark table-striped">     
         {% for set in snatch %}
             <tr>
                 <td>
-                    <h3 class="display-4">
+                    <h3>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * snatch_max) }} lbs,
                         {{ set[2] }} set(s)
@@ -21,12 +18,13 @@
             </tr>
         {% endfor %}
     </table>
-    <h1 class="display-4 font-weight-bold">clean & jerk</h1>
+
+    <h1>clean & jerk</h1>
     <table class="table table-dark table-striped">     
         {% for set in clean_jerk %}
             <tr>
                 <td>
-                    <h3 class="display-4">
+                    <h3>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * clean_max) }} lbs,
                         {{ set[2] }} set(s)
@@ -36,12 +34,12 @@
         {% endfor %}
     </table>
 
-    <h1 class="display-4 font-weight-bold">stiff-legged deadlift</h1>
+    <h1>stiff-legged deadlift</h1>
     <table class="table table-dark table-striped">     
         {% for set in SLDL %}
             <tr>
                 <td>
-                    <h3 class="display-4">
+                    <h3>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * squat_max) }} lbs,
                         {{ set[2] }} set(s)
@@ -50,9 +48,5 @@
             </tr>
         {% endfor %}
     </table>
-
-</div>
-
-<br />
 
 {% endblock %}

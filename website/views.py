@@ -64,7 +64,6 @@ def options():
                             snatch_max=current_user.snatch_max)
 
 
-
 @views.route("/squat", methods=["POST", "GET"])
 @login_required
 def squat():
@@ -101,6 +100,7 @@ def squat():
 
     if request.method == "POST":
         if "make_lift" in request.form:
+            # log make
             squat_id = current_user.squat_id
             if squat_id % 4 == 3:
                 current_user.squat_max = current_user.squat_max + (current_user.squat_max * .02)
@@ -112,42 +112,76 @@ def squat():
                 db.session.commit()
                 return redirect(url_for("views.home"))
         elif "miss_lift" in request.form:
+            # log miss
             return redirect(url_for("views.home"))
+
 
 @views.route("/clean", methods=["POST", "GET"])
 @login_required
 def clean():
-    CLEAN_MAX = current_user.clean_max 
-    return render_template("clean.html", 
-        user=current_user, 
-        max=CLEAN_MAX, 
-        three_position=routines.three_position, 
-        front_squat=routines.front_squat,
-        push_press=routines.push_press, 
-        snatch_press=routines.snatch_press)
+    if request.method == "GET":
+        CLEAN_MAX = current_user.clean_max 
+        return render_template("clean.html", 
+            user=current_user, 
+            max=CLEAN_MAX, 
+            three_position=routines.three_position, 
+            front_squat=routines.front_squat,
+            push_press=routines.push_press, 
+            snatch_press=routines.snatch_press)
+    
+    if request.method == "POST":
+        if "make_lift" in request.form:
+            # log make
+            return redirect(url_for("views.home"))
+        else:
+            # log miss
+            return redirect(url_for("views.home"))
+    
 
 @views.route("/snatch", methods=["POST", "GET"])
 @login_required
 def snatch():
-    SNATCH_MAX = current_user.snatch_max 
-    return render_template("snatch.html", 
-        user=current_user, 
-        max=SNATCH_MAX, 
-        three_position=routines.three_position, 
-        snatch_pull=routines.snatch_pull,
-        drop_snatch=routines.drop_snatch)
+    if request.method == "GET":
+        SNATCH_MAX = current_user.snatch_max 
+        return render_template("snatch.html", 
+            user=current_user, 
+            max=SNATCH_MAX, 
+            three_position=routines.three_position, 
+            snatch_pull=routines.snatch_pull,
+            drop_snatch=routines.drop_snatch)
+    
+    if request.method == "POST":
+        if "make_lift" in request.form:
+            # log make
+            return redirect(url_for("views.home"))
+        else:
+            # log miss
+            return redirect(url_for("views.home"))
+    
 
 @views.route("/clean_jerk", methods=["POST", "GET"])
 @login_required
 def clean_jerk():
-    SNATCH_MAX = current_user.snatch_max
-    CLEAN_MAX = current_user.clean_max 
-    SQUAT_MAX = current_user.squat_max
-    return render_template("clean_jerk.html", 
-        user=current_user, 
-        snatch_max=SNATCH_MAX,
-        clean_max=CLEAN_MAX,
-        squat_max=SQUAT_MAX, 
-        snatch=routines.snatch, 
-        clean_jerk=routines.clean_jerk,
-        SLDL=routines.SLDL)
+    if request.method == "GET":
+        SNATCH_MAX = current_user.snatch_max
+        CLEAN_MAX = current_user.clean_max 
+        SQUAT_MAX = current_user.squat_max
+        return render_template("clean_jerk.html", 
+            user=current_user, 
+            snatch_max=SNATCH_MAX,
+            clean_max=CLEAN_MAX,
+            squat_max=SQUAT_MAX, 
+            snatch=routines.snatch, 
+            clean_jerk=routines.clean_jerk,
+            SLDL=routines.SLDL)
+    
+    if request.method == "POST":
+        if "make_lift" in request.form:
+            # log make
+            current_user.snatch_max = current_user.snatch_max + (current_user.snatch_max * .05)
+            current_user.clean_max = current_user.clean_max + (current_user.clean_max * .05)
+            db.session.commit()
+            return redirect(url_for("views.home"))
+        else:
+            # log miss
+            return redirect(url_for("views.home"))

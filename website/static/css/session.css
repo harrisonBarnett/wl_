@@ -1,30 +1,7 @@
-/* make/miss footer button settings */
-nav {
-    font-size: 2rem;
-    background-color: rgb(28, 28, 28);
-    
-}
- /* flex container */
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-nav ul li {
-    cursor: pointer;
-    flex: auto;
-    text-align: center;
-    font-family:Impact;
-    color: white;
-    text-decoration: none;
-    border: 2px solid rgb(250, 208, 22);
-}
-
+/* styling for make/miss buttons */
 .button-group-container {
     align-content: center;
+    opacity: .8;
 }
 
 .button-group button {
@@ -37,12 +14,14 @@ nav ul li {
     align-content: center;
 }
 
+/* styling for the set/rep scheme table */
 table {
     position: relative;
     margin-right: auto;
     margin-left: auto;
     align-content: center;
     border: 2px solid rgb(250, 208, 22);
+    opacity: .8;
 }
 
 h1 {
@@ -55,3 +34,14 @@ table {
     font-family: Arial;
 }
 
+/* background */
+
+body {
+    box-shadow: inset 0 0 10em 8em #000;
+    background-image: url("/static/images/jerk_bg.jpg");
+    background-color: black;
+    height: 1024px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

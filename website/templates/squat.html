@@ -40,10 +40,31 @@
                 {{ "%.2f"|format(max * volume[0][1]) }} lbs</h3></td>
         </tr>
         {% endfor %}
-        
     </table>
 
+    <div class="button-group-container">
+        <form  class="button-group" method="POST">
+            <button 
+            id="make_lift" 
+            type="submit"
+            class="btn btn-dark btn-lg btn-block" 
+            onclick="return confirm('submit lift?')"  
+            name="make_lift"
+            >
+            <h1>make</h1>
+            </button>
 
+            <button 
+            id="miss_lift" 
+            type="button"
+            class="btn btn-dark btn-lg btn-block" 
+            onclick="go_home()" 
+            name="miss_lift"
+            >
+            <h1>miss</h1>
+            </button>
+        </form>
+    </div>
 
 
 {% endblock %}

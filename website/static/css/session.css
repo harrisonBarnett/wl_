@@ -23,9 +23,25 @@ nav ul li {
     border: 2px solid rgb(250, 208, 22);
 }
 
+.button-group-container {
+    align-content: center;
+}
 
+.button-group button {
+    border: 2px solid rgb(250, 208, 22);
+    
+}
+
+.table-container {
+    position: relative;
+    align-content: center;
+}
 
 table {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    align-content: center;
     border: 2px solid rgb(250, 208, 22);
 }
 

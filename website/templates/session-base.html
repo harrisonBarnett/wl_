@@ -49,8 +49,6 @@
                 return false;
             }          
         }
-
-
         function updateMax() {
             if(confirm('finished up?') == true) {
                 window.location.replace(url_for("views.home"));
@@ -62,15 +60,12 @@
 
         function makeLift() {
             if(confirm('submit lift?') == true){
-                document.getElementById("make_lift").submit()
                 window.location.replace("/home");
             }
             else {
                 return false;
             }
         }
-
-
     </script>
 
 
@@ -78,32 +73,8 @@
             {% block body %}
 
             {% endblock %}
-            
         </div>
 
-        <nav class="miss-make-footer">
-            <ul>
-                <li
-                type="submit"
-                onclick="makeLift()"
-                id="make_lift"
-                name="make_lift">
-                make
-                </li>
-                <li>
-                    <form method="POST">
-                        <input 
-                        onclick="return confirm('submit session?')"
-                        type="submit"
-                        value="miss"
-                        name="miss_lift">
-                    </form>
-                </li>
-                <li onclick="go_home()">bail</li>
-            </ul>
-        </nav>
-
-        
 
         <script
         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

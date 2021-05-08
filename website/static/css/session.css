@@ -5,6 +5,25 @@ nav {
     
 }
  /* flex container */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    cursor: pointer;
+    flex: auto;
+    text-align: center;
+    font-family:Impact;
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgb(250, 208, 22);
+}
+
+
 
 table {
     border: 2px solid rgb(250, 208, 22);
@@ -20,15 +39,3 @@ table {
     font-family: Arial;
 }
 
-.button-group {
-    color: white;
-    padding: 12px 20px;
-    margin: 8px 0;
-    font-family: Arial;
-    text-decoration: none;
-    
-}
-
-.button-group button {
-    border: 2px solid rgb(250, 208, 22);
-}

@@ -60,6 +60,16 @@
             }
         }
 
+        function makeLift() {
+            if(confirm('submit lift?') == true){
+                document.getElementById("make_lift").submit()
+                window.location.replace("/home");
+            }
+            else {
+                return false;
+            }
+        }
+
 
     </script>
 
@@ -73,14 +83,12 @@
 
         <nav class="miss-make-footer">
             <ul>
-                <li>
-                    <form method="POST">
-                        <input 
-                        onclick="return confirm('submit session?')"
-                        type="submit"
-                        value="make"
-                        name="make_lift">
-                    </form>
+                <li
+                type="submit"
+                onclick="makeLift()"
+                id="make_lift"
+                name="make_lift">
+                make
                 </li>
                 <li>
                     <form method="POST">

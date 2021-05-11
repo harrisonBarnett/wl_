@@ -46,4 +46,3 @@ def create_database(app):
     # initialize the db if it does not yet exist
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
-        print('Created Database!')

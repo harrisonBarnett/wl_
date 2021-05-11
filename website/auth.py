@@ -69,7 +69,7 @@ def set_up():
             db.session.commit()
             login_user(new_user, remember=True)
 
-            flash('account created!', category='dark')
+            
             return redirect(url_for('views.home'))
     
     return render_template("set-up.html", user=current_user)

@@ -2,10 +2,8 @@
 body {
     background-image: url("/static/images/snatch_bg.jpg");
     background-color: black;
-    height: 600px;
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: 50% 25%;
 }
 
 #signin-box {

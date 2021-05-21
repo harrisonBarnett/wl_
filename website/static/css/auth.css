@@ -15,7 +15,7 @@ input {
     color: white;
     width: 300px;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: auto;
     box-sizing: border-box;
     border: 2px solid rgb(250, 208, 22);
     background-color: grey; 
@@ -28,16 +28,17 @@ input {
 
 .login-form {
     position: relative;
-    top: 200px;
+    top: 25vw;
     width: 300px; /* set width of a block element */ 
-    margin: 0 auto;  /* accounts for element size to center dynamically */   
+    margin: 0 auto;  /* accounts for element size to center dynamically */ 
+    text-align: center;
 }
 
 .submit-button {
     position: relative;
     width: 100px;
     padding: 12px 20px;
-    margin: 8px 100px;
+    margin-bottom: 8px;
     box-sizing: border-box;
     background-color: grey; 
     border: 2px solid rgb(250, 208, 22);

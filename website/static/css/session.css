@@ -3,24 +3,73 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0;
     height: 100vh;
     background-image: url("../images/jerk_bg.jpg");
-    background-position: top;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-position: top;
+    background-size: 200%;
     
 }
 
 .container {
-    background: white;
-    width: 50vw;
+    width: 75vw;
     margin: 0 auto;
+    margin-top: 4em;
+
 }
 
 .table-container {
-    background: pink;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.set-title {
+    width: 100%;
+    margin: 0;
+    padding: 1em 0;
+    font-family: impact;
+    color: yellow;
+}
+
+
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+tr {
+    background: rgba(6, 6, 6, .9);
+    width: 100%;
+}
+td {
+    border: 1px solid gray;
+}
+td p {
+    font-family: Arial;
+    color: white;
+}
+button {
+    width: 25vw;
+    border: none;
+    background: white;
+    cursor: pointer;
+
+}
+
+@media only screen and (min-width: 800px) {
+
+    body {
+        background-size: 100%;
+    }
+
+    .container {
+        width: 50vw;
+    }
+
 }

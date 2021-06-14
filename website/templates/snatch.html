@@ -5,74 +5,76 @@
 {% block body %}
 
     <div class="table-container">
-        <h1>3-position snatch</h1>
+        <p class="set-title">3-POSITION SNATCH</p>
         <table class="table table-dark table-striped">     
             {% for set in three_position %}
                 <tr>
                     <td>
-                        <h3>
+                        <p>
                             {{ set[0] }} reps @,
                             {{ "%.2f"|format(set[1] * max) }} lbs,
                             {{ set[2] }} set(s)
-                        </h3>
+                        </p>
                     </td>
                 </tr>
             {% endfor %}
         </table>
 
-        <h1>snatch pull</h1>
+        <p class="set-title">SNATCH PULL</p>
         <table class="table table-dark table-striped">     
             {% for set in snatch_pull %}
                 <tr>
                     <td>
-                        <h3>
+                        <p>
                             {{ set[0] }} reps @,
                             {{ "%.2f"|format(set[1] * max) }} lbs,
                             {{ set[2] }} set(s)
-                        </h3>
+                        </p>
                     </td>
                 </tr>
             {% endfor %}
         </table>
 
-        <h1>drop snatch</h1>
+        <p class="set-title">DROP SNATCH</h1>
         <table class="table table-dark table-striped">     
             {% for set in drop_snatch %}
                 <tr>
                     <td>
-                        <h3>
+                        <p>
                             {{ set[0] }} reps @,
                             {{ "%.2f"|format(set[1] * max) }} lbs,
                             {{ set[2] }} set(s)
-                        </h3>
+                        </p>
                     </td>
                 </tr>
             {% endfor %}
         </table>
+
+        <div class="button-group-container">
+            <form  class="button-group" method="POST">
+                <button 
+                id="make_lift" 
+                type="submit"
+                class="btn btn-dark btn-lg btn-block" 
+                onclick="return confirm('submit lift?')"  
+                name="make_lift"
+                >
+                <p>make</p>
+                </button>
+    
+                <button 
+                id="miss_lift" 
+                type="button"
+                class="btn btn-dark btn-lg btn-block" 
+                onclick="go_home()" 
+                name="miss_lift"
+                >
+                <p>miss</p>
+                </button>
+            </form>
+        </div>
     </div>
 
-    <div class="button-group-container">
-        <form  class="button-group" method="POST">
-            <button 
-            id="make_lift" 
-            type="submit"
-            class="btn btn-dark btn-lg btn-block" 
-            onclick="return confirm('submit lift?')"  
-            name="make_lift"
-            >
-            <h1>make</h1>
-            </button>
-
-            <button 
-            id="miss_lift" 
-            type="button"
-            class="btn btn-dark btn-lg btn-block" 
-            onclick="go_home()" 
-            name="miss_lift"
-            >
-            <h1>miss</h1>
-            </button>
-        </form>
-    </div>
+   
 
 {% endblock %}

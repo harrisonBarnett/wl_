@@ -1,7 +1,10 @@
+:root {
+    --accent-color: rgb(250, 208, 22);
+}
+
 html {
     background: black;
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -9,17 +12,13 @@ body {
     background-image: url("../images/jerk_bg.jpg");
     background-repeat: no-repeat;
     background-position: top;
-    background-size: 200%;
-    
+    background-size: 200%;   
 }
-
 .container {
     width: 75vw;
     margin: 0 auto;
     margin-top: 4em;
-
 }
-
 .table-container {
     height: 75vh;
     display: flex;
@@ -27,47 +26,46 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .set-title {
     width: 100%;
     margin: 0;
     padding: 1em 0;
     font-family: impact;
-    color: yellow;
+    color: var(--accent-color);
 }
-
-
-
 table {
     width: 100%;
     text-align: center;
 }
-
 tr {
     background: rgba(6, 6, 6, .9);
     width: 100%;
 }
 td {
-    border: 1px solid gray;
+    border: 1px solid white;
 }
 td p {
     font-family: Arial;
     color: white;
 }
+.button-group-container {
+    margin-top: 1em;
+}
 button {
     width: 25vw;
+    margin: 0 .5em;
     border: none;
-    background: white;
+    background: var(--accent-color);
+    opacity: .9;
     cursor: pointer;
-
 }
+
 
 @media only screen and (min-width: 800px) {
 
     body {
         background-size: 100%;
     }
-
     .container {
         width: 50vw;
     }

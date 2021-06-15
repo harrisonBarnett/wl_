@@ -3,89 +3,66 @@
 {% block title %} clean {% endblock %}
 
 {% block body %}
-
-    <h1>3-position clean</h1>
+<div class="table-container">
+<p class="set-title">3-POSITION CLEAN</p>
     <table class="table table-dark table-striped">     
         {% for set in three_position %}
             <tr>
                 <td>
-                    <h3>
+                    <p>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * max) }} lbs,
                         {{ set[2] }} set(s)
-                    </h3>
+                    </p>
                 </td>
             </tr>
         {% endfor %}
     </table>
 
-    <h1>front squat</h1>
+    <p class="set-title">FRONT SQUAT</p>
     <table class="table table-dark table-striped">     
         {% for set in front_squat %}
             <tr>
                 <td>
-                    <h3>
+                    <p>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * max) }} lbs,
                         {{ set[2] }} set(s)
-                    </h3>
+                    </p>
                 </td>
             </tr>
         {% endfor %}
     </table>
 
-    <h1>overhead press</h1>
+    <p class="set-title">OVERHEAD PRESS</p>
     <table class="table table-dark table-striped">     
         {% for set in push_press %}
             <tr>
                 <td>
-                    <h3>
+                    <p>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * max) }} lbs,
                         {{ set[2] }} set(s)
-                    </h3>
+                    </p>
                 </td>
             </tr>
         {% endfor %}
     </table>
 
-    <h1>snatch press</h1>
+    <p class="set-title">SNATCH PRESS</p>
     <table class="table table-dark table-striped">     
         {% for set in snatch_press %}
             <tr>
                 <td>
-                    <h3>
+                    <p>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * max) }} lbs,
                         {{ set[2] }} set(s)
-                    </h3>
+                    </p>
                 </td>
             </tr>
         {% endfor %}
     </table>
-
-    <div class="button-group-container">
-        <form  class="button-group" method="POST">
-            <button 
-            id="make_lift" 
-            type="submit"
-            class="btn btn-dark btn-lg btn-block" 
-            onclick="return confirm('submit lift?')"  
-            name="make_lift"
-            >
-            <h1>make</h1>
-            </button>
-
-            <button 
-            id="miss_lift" 
-            type="button"
-            class="btn btn-dark btn-lg btn-block" 
-            onclick="go_home()" 
-            name="miss_lift"
-            >
-            <h1>miss</h1>
-            </button>
-        </form>
-    </div>
+</div>
 
 {% endblock %}

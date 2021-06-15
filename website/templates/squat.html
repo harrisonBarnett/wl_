@@ -3,68 +3,48 @@
 {% block title %} squat {% endblock %}
 
 {% block body %}
-
-    <h1>warmup</h1>
+<div class="table-container">
+    <p class="set-title">WARMUP</p>
     <table class="table table-dark table-striped">     
         {% for set in warmup %}
             <tr>
                 <td>
-                    <h3>
+                    <p>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * max) }} lbs
-                    </h3>
+                    </p>
                 </td>
             </tr>
         {% endfor %}
     </table>
 
-    <h1>main sets</h1>
+    <p class="set-title">MAIN SETS</p>
     <table class="table table-dark table-striped">     
         {% for set in main %}
             <tr>
                 <td>
-                    <h3>
+                    <p>
                         {{ set[0] }} reps @,
                         {{ "%.2f"|format(set[1] * max) }} lbs
-                    </h3>
+                    </p>
                 </td>
             </tr>
         {% endfor %}
     </table>
 
-    <h1>volume</h1>
+    <p class="set-title">VOLUME</p>
     <table class="table table-dark table-striped">
         {% for n in range(4) %}
         <tr>
-            <td><h3>{{ volume[0][0] }} reps @ 
-                {{ "%.2f"|format(max * volume[0][1]) }} lbs</h3></td>
+            <td
+                ><p>{{ volume[0][0] }} reps @ 
+                    {{ "%.2f"|format(max * volume[0][1]) }} lbs
+                </p>
+            </td>
         </tr>
         {% endfor %}
     </table>
-
-    <div class="button-group-container">
-        <form  class="button-group" method="POST">
-            <button 
-            id="make_lift" 
-            type="submit"
-            class="btn btn-dark btn-lg btn-block" 
-            onclick="return confirm('submit lift?')"  
-            name="make_lift"
-            >
-            <h1>make</h1>
-            </button>
-
-            <button 
-            id="miss_lift" 
-            type="button"
-            class="btn btn-dark btn-lg btn-block" 
-            onclick="go_home()" 
-            name="miss_lift"
-            >
-            <h1>miss</h1>
-            </button>
-        </form>
-    </div>
+</div>
 
 
 {% endblock %}

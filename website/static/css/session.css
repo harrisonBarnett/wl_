@@ -29,13 +29,14 @@ body {
 .set-title {
     width: 100%;
     margin: 0;
-    padding: 1em 0;
+    padding: 0;
     font-family: impact;
-    font-size: 2em;
+    font-size: 1.6em;
     color: var(--accent-color);
 }
 table {
     width: 100%;
+    margin-bottom: 1em;
     text-align: center;
 }
 tr {
@@ -54,13 +55,14 @@ td p {
 }
 .button-group {
     display: flex;
+    justify-content: space-around;
 }
 button {
-    width: 15vw;
-    margin: 0 .5em;
+    width: 25vw;
+    margin: 0;
+    padding: 0;
     border: none;
     background: var(--accent-color);
-    opacity: .9;
     cursor: pointer;
 }
 

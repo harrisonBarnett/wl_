@@ -20,6 +20,29 @@
             {% block body %}
 
             {% endblock %}
+            <div class="button-group-container">
+                <form  class="button-group" method="POST">
+                    <button 
+                    id="make_lift" 
+                    type="submit"
+                    class="btn btn-dark btn-lg btn-block" 
+                    onclick="return confirm('submit lift?')"  
+                    name="make_lift"
+                    >
+                    <p>MAKE</p>
+                    </button>
+    
+                    <button 
+                    id="miss_lift" 
+                    type="button"
+                    class="btn btn-dark btn-lg btn-block" 
+                    onclick="go_home()" 
+                    name="miss_lift"
+                    >
+                    <p>MISS</p>
+                    </button>
+                </form>
+            </div>
         </div>
 
 

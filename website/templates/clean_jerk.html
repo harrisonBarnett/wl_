@@ -3,74 +3,75 @@
 {% block title %} options {% endblock %}
 
 {% block body %}
-    
-    <h1>snatch</h1>
-    <table class="table table-dark table-striped">     
-        {% for set in snatch %}
-            <tr>
-                <td>
-                    <h3>
-                        {{ set[0] }} reps @,
-                        {{ "%.2f"|format(set[1] * snatch_max) }} lbs,
-                        {{ set[2] }} set(s)
-                    </h3>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+    <div class="table-container">
+        <p class="set-title">SNATCH</p>
+        <table class="table table-dark table-striped">     
+            {% for set in snatch %}
+                <tr>
+                    <td>
+                        <p>
+                            {{ set[0] }} reps @,
+                            {{ "%.2f"|format(set[1] * snatch_max) }} lbs,
+                            {{ set[2] }} set(s)
+                        </p>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
 
-    <h1>clean & jerk</h1>
-    <table class="table table-dark table-striped">     
-        {% for set in clean_jerk %}
-            <tr>
-                <td>
-                    <h3>
-                        {{ set[0] }} reps @,
-                        {{ "%.2f"|format(set[1] * clean_max) }} lbs,
-                        {{ set[2] }} set(s)
-                    </h3>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+        <p class="set-title">CLEAN & JERK</p>
+        <table class="table table-dark table-striped">     
+            {% for set in clean_jerk %}
+                <tr>
+                    <td>
+                        <p>
+                            {{ set[0] }} reps @,
+                            {{ "%.2f"|format(set[1] * clean_max) }} lbs,
+                            {{ set[2] }} set(s)
+                        </p>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
 
-    <h1>stiff-legged deadlift</h1>
-    <table class="table table-dark table-striped">     
-        {% for set in SLDL %}
-            <tr>
-                <td>
-                    <h3>
-                        {{ set[0] }} reps @,
-                        {{ "%.2f"|format(set[1] * squat_max) }} lbs,
-                        {{ set[2] }} set(s)
-                    </h3>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+        <p class="set-title">SLDL</p>
+        <table class="table table-dark table-striped">     
+            {% for set in SLDL %}
+                <tr>
+                    <td>
+                        <p>
+                            {{ set[0] }} reps @,
+                            {{ "%.2f"|format(set[1] * squat_max) }} lbs,
+                            {{ set[2] }} set(s)
+                        </p>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
 
-    <div class="button-group-container">
-        <form  class="button-group" method="POST">
-            <button 
-            id="make_lift" 
-            type="submit"
-            class="btn btn-dark btn-lg btn-block" 
-            onclick="return confirm('submit lift?')"  
-            name="make_lift"
-            >
-            <h1>make</h1>
-            </button>
+        <div class="button-group-container">
+            <form  class="button-group" method="POST">
+                <button 
+                id="make_lift" 
+                type="submit"
+                class="btn btn-dark btn-lg btn-block" 
+                onclick="return confirm('submit lift?')"  
+                name="make_lift"
+                >
+                <p>make</p>
+                </button>
 
-            <button 
-            id="miss_lift" 
-            type="button"
-            class="btn btn-dark btn-lg btn-block" 
-            onclick="go_home()" 
-            name="miss_lift"
-            >
-            <h1>miss</h1>
-            </button>
-        </form>
+                <button 
+                id="miss_lift" 
+                type="button"
+                class="btn btn-dark btn-lg btn-block" 
+                onclick="go_home()" 
+                name="miss_lift"
+                >
+                <p>miss</p>
+                </button>
+            </form>
+        </div>
     </div>
 
 {% endblock %}

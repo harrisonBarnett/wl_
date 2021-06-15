@@ -13,6 +13,7 @@ body {
     background-repeat: no-repeat;
     background-position: top;
     background-size: 200%;   
+    background-attachment: fixed;
 }
 .container {
     width: 75vw;

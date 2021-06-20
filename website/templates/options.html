@@ -14,10 +14,10 @@ function clearData() {
 }
 </script>
 
+<h1 class="page-title">update totals</h1> 
 
-<container class="totals-container" align="center">
+<container class="totals-container">
     <form class="total-form" method="POST">
-        <h1 class="page-title">update totals</h1> 
         <div class="form-group">
             <input 
             autofocus
@@ -52,29 +52,28 @@ function clearData() {
     </form> 
 </container>
 
-<container class="options-container" align="center">
-    <container class="options-buttons">
-        <h1 class="page-title">other options</h1>
-        <form method="POST">
-            <div class="form-group">
-                <button 
-                    id="option-button"
-                    name="clear_data" 
-                    type="submit" 
-                    class="clear-button"
-                    onclick="clearData()" >
-                    clear training data
-            </div>
-            <div class="form-group">
-                <button 
-                    id="option-button"
-                    name="update_login" 
-                    type="submit" 
-                    class="update-login">
-                    update login info
-            </div>
-        </form>
-    </container>
+<h1 class="page-title">other options</h1>
+
+<container class="options-container">
+    <form method="POST">
+        <div class="form-group">
+            <button 
+                id="option-button"
+                name="clear_data" 
+                type="submit" 
+                class="clear-button"
+                onclick="clearData()" >
+                clear training data
+        </div>
+        <div class="form-group">
+            <button 
+                id="option-button"
+                name="update_login" 
+                type="submit" 
+                class="update-login">
+                update login info
+        </div>
+    </form>
 </container>
 
 {% endblock %}

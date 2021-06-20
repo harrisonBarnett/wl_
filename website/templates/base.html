@@ -7,46 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- custom css -->
-    <link 
-    rel= "stylesheet" 
-    type= "text/css" 
-    href= "{{ url_for('static',filename='css/styles.css') }}"
-    />
-    
-    <!-- bootstrap stylesheets for making the site pretty, literally just copy/paste-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="/static/css/styles.css">    
+
 
     <!-- can be overridden in templates that inherit this template -->
     <title>{% block title %} base template {% endblock %}</title>
 </head>
 <body>
-    <!-- boostrap overrides -->
-     <style type="text/css">
-        button { background: rgb(28, 28, 28) !important; }
-     </style>
-     <style type="text/css">
-      html { background: rgb(0, 0, 0) !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-   </style>
 
-    <!-- scratch navbar -->
-    <nav class="main-navbar">
-        <ul>
-            <li><a id="home" href="/home">home</a></li>
-            <li><a id="progress" href="/options">progress</a></li>
-            <li><a id="options" href="/options">options</a></li>
-            <li><a id="logout" href="/logout">log out</a></li>
-        </ul>
+
+  <header>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+    <nav>
+      <ul>
+        <li><a href="/home">home</a></li>
+        <li><a href="/options">progress</a></li>
+        <li><a href="/options">options</a></li>
+        <li><a href="/logout">logout</a></li>
+      </ul>
     </nav>
+  </header>
+
 
     <div class="container">
         {% block body %}
@@ -55,22 +39,6 @@
         
     </div>
     
-    <!-- js code for site interaction/movement, copy/paste -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
     <!-- url_for provides the filepath to the 'static' folder containing custom .js -->
     <script
       type="text/javascript"

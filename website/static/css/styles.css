@@ -1,89 +1,227 @@
-/* navbar stuff */
-nav {
-    font-size: 2rem;
-    background-color: rgb(0, 0, 0);
-
-    
+:root {
+    --nav-color: rgba(0, 0, 0, .75);
+    --accent-color: rgba(255, 255, 87, 1);
 }
- /* flex container */
-nav ul {
-    list-style-type: none;
+
+/* background */
+body {
+    box-shadow: inset 0 0 15em 4em #000;
+    background-image: url("/static/images/home_bg.jpg");
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: space-around;
 }
 
-nav ul li {
-    cursor: pointer;
-    flex: auto;
-    text-align: center;
-    font-family:Impact;
-    color: white;
-    text-decoration: none;
-    border: 2px solid rgb(250, 208, 22);
+/* =============NAVBAR JUNK =================== */
+header {
+text-align: center;
+position: fixed;
+z-index: 999;
+width: 100%;
+height: 2em;
+margin: 0;
+}
+nav {
+position: absolute;
+text-align: left;
+top: 100%;
+left: 0;
+width: 100%;
+transform: scale(1, 0);
+transform-origin: top;
+transition: transform 200ms ease-in-out;
+margin-bottom: 0;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-family: Impact;
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+display: flex;
+flex-direction: column;
 }
 
-nav ul li:hover {
-    background-color: rgb(50, 50, 50)
+nav li {
+width: 100%;
+background: var(--accent-color);
 }
 
-nav ul li a:hover{
-    color: white;
-    text-decoration: none;
+nav a {
+color: black;
+text-decoration: none;
+font-size: 1.4rem;
+font-weight: 600;
+margin: .5em;
+text-transform: uppercase;
+opacity: 0;
+transition: opacity 100ms ease-in-out;
 }
 
-/* make the navbar responsive depending on portal width */
-@media all and (max-width: 600px) {
+nav a:hover {
+color: white;
+text-decoration: none;
+}
 
-    nav ul {
-        flex-direction: column;
+.nav-toggle:checked ~ nav{
+transform: scale(1, 1);
+}
+.nav-toggle:checked ~ nav a {
+opacity: 1;
+transition: opacity 150ms ease-in-out 120ms;
+}
+.nav-toggle {
+display: none;
+}
+.nav-toggle-label {
+position: absolute;
+top: 0;
+left: 0;
+margin-left: 1em;
+height: 100%;
+display: flex;
+align-items: center;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+display: block;
+background: var(--accent-color);
+height: 2px;
+width: 2em;
+position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+content: '';
+position: absolute;
+}
+
+.nav-toggle-label span::before {
+bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+top: 8px;
+}
+/* ========== DESKTOP RESPONSIVE =============== */
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
     }
+    header {
+        top: 0;
+        background: var(--nav-color); 
+        padding: .5em;
+        display: flex;
+        justify-content: center;
 
-    nav ul li {
+    }
+    nav {
+        /* unsupported by edge browser */
+        all: unset;
+        
+        /* adding edge support */
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1,1);
+        top: initial;
+        left: initial;
+        width: 75vw;
+
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    nav li {
+        margin-bottom: 0;
+        background: var(--nav-color);
         text-align: center;
     }
+    nav a {
+        opacity: 1;
+        position: relative;
+        color: white;
+    }
+    nav a:hover {
+        color: var(--accent-color);
+        text-decoration: none;
 
+    }
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: var(--hover-color);
+        position: absolute;
+        bottom: -.5em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transform-origin: left;
+        transition: transform ease-in-out 150ms;
+    }
+    nav a:hover::before {
+        transform: scale(1,1);
+    }
 }
+/* =========== END NAV SECTION ================= */
 
-/* button styling */
-
+.container {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.page-title {
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    text-decoration: none;
+    opacity: .9;
+    padding-top: .5em;
+    font-weight: 400;
+}
+/* =========== HOME PAGE ========== */
+.yellow-w {
+    color: var(--accent-color);
+}
+form {
+    margin: 0 auto;
+}
 .button-group {
-    color: white;
-    padding: 12px 20px;
-    margin: 8px 0;
-    font-family: Arial;
-    text-decoration: none;
-    opacity: .9;
-    
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
-
-.button-group button {
-    border: 2px solid rgb(250, 208, 22);
+button {
+    width: 75vw;
+    margin: .25em auto;
+    font-size: 1.6em;
+    font-weight: 400;
+    padding: .5em 0;
+    border-radius: none;
+    border: none;
 }
-
-.title {
-    font-size: 52px;
-    color: white;
-    text-decoration: none;
-    font-family: Arial;
-    opacity: .9;
-}
-
-h1 {
-    color: white;
-    opacity: .9;
-}
-
-h3 {
-    color: white;
-    opacity: .9;
+@media screen and (min-width: 800px) {
+    button {
+        width: 50vw;
+        font-size: 1.8em;
+        padding: 1em 0;
+    }
+    button:hover {
+        opacity: .9;
+        cursor: pointer;
+    }
 }
 
 
@@ -161,14 +299,3 @@ input::placeholder {
     margin: 0 auto;  /* accounts for element size to center dynamically */  
 }
 
-/* background */
-body {
-    box-shadow: inset 0 0 15em 4em #000;
-    background-image: url("/static/images/home_bg.jpg");
-    background-color: black;
-    height: 1024px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}

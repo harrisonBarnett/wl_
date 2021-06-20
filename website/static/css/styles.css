@@ -207,6 +207,7 @@ form {
 }
 button {
     width: 75vw;
+    background: rgba(255, 255, 255, .9);
     margin: .25em auto;
     font-size: 1.6em;
     font-weight: 400;
@@ -254,7 +255,9 @@ input::placeholder {
     border: none;
     color: black;
 }
-
+.submit-button:hover {
+    color: white;
+}
 .options-container {
     margin: 0;
     padding: 0;
@@ -273,6 +276,17 @@ input::placeholder {
     border: none;
     color: black;
 }
+#option-button:hover {
+    opacity: 1;
+    color: white;
+}
 
+@media screen and (min-width: 800px) {
+    .totals-container,
+    .options-container {
+        width: 50vw;
+        margin: 0 auto;
+    }
+}
 
 

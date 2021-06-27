@@ -3,7 +3,7 @@ body {
     background-image: url("/static/images/snatch_bg.jpg");
     background-color: black;
     background-repeat: no-repeat;
-    background-position: 50% 25%;
+    background-position: center;
 }
 
 #signin-box {
@@ -17,7 +17,7 @@ body {
 
 #wl_logo p {
     flex: auto;
-    color: rgb(255, 255, 87);
+    color: rgba(255, 255, 87, 1);
 }
 
 
@@ -25,5 +25,8 @@ body {
     cursor: pointer;
     flex: auto;
     color: white;
-
+    text-decoration: none;
+}
+#signin a:hover {
+    color: rgba(255, 255, 87, 1);
 }

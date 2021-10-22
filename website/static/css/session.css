@@ -8,7 +8,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 800px;
     background-image: url("../images/jerk_bg.jpg");
     background-repeat: no-repeat;
     background-position: top;

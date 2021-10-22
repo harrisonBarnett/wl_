@@ -7,10 +7,10 @@ Most of us are familiar with the functionality of a typical fitness or exercise 
 and prescribe a set x rep scheme. However, many fall short when it comes to actually advising the user as to how to 
 progress the amount of weight to use. To that end, I have made wl_, an MVC application built in Flask. 
 
-Here is the main page once a user logs in:
+### Here is the main page once a user logs in:
 ![the main page](https://i.imgur.com/oWZtM5x.png)
 
-From here, the user must configure their application by providing their one-rep-max values in the options page:
+### From here, the user must configure their application by providing their one-rep-max values in the options page:
 ![the options page](https://i.imgur.com/S3QXwb5.png)
 
 Once the application is configured, the user can log into the app from any device and access a bespoke, linearly-progressed 
@@ -19,7 +19,7 @@ olympic weightlifting program.
 The user is expected to complete each session (squat, snatch, clean & jerk and snatch / clean & jerk) within a cycle. A cycle
 may be any arbitrary (and reasonable) amount of days. Once the user chooses a session to engage in, a set x rep scheme is 
 generated with weights based on a percentage of the one rep max provided in their app configuration:
-
+###
 ![session page](https://i.imgur.com/NVE0Wjd.png)
 
 ### Progression occurs in two ways:
